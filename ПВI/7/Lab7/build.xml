@@ -1,0 +1,59 @@
+<?xml version="1.0" ?>
+<project name="Lab7" default="war">
+
+    <target name="init">
+        <echo message="Build Lab7 Project" />
+        <property name = "server"
+        value = "D:\ALEX\STUDY\7SEM_4COURSE\JAVA\apache-tomcat-9.0.52\" />
+        <property name = "work"
+                  value = "D:\ALEX\STUDY\7SEM_4COURSE\JAVA\LABS\7\Lab7\" />
+    </target>
+
+    <target name="compile" depends ="init">
+        <delete verbose ="true" >
+            <fileset dir="${work}build"/>
+        </delete>
+        <mkdir dir= "${work}build" />
+        <javac srcdir = "${work}src" destdir = "${work}build">
+            <classpath>
+                <fileset dir="${server}lib"/>
+            </classpath>
+        </javac>
+    </target>
+
+    <target name="create" depends ="compile">
+        <delete dir= "${server}webapps\Lab7\" />
+        <mkdir dir= "${server}webapps\Lab7\" />
+        <mkdir dir= "${server}webapps\Lab7\WEB-INF" />
+    </target>
+
+    <target name="copy" depends ="create">
+        <copy todir="${server}webapps\Lab7\WEB-INF\" file= "${work}src\main\webapp\WEB-INF\web.xml"/>
+
+        <copy todir="${server}webapps\Lab7\jsp">
+            <fileset dir="${work}src\main\webapp\jsp"/>
+        </copy>
+
+<!--        <copy todir="${server}webapps\Lab7\html">-->
+<!--            <fileset dir="${work}src\main\webapp\html"/>-->
+<!--        </copy>-->
+<!--        <copy todir="${server}webapps\Lab7\" file="${work}src\main\webapp\index.html"/>-->
+        <copy todir="${server}webapps\Lab7\" file="${work}src\main\webapp\index.jsp"/>
+
+        <copy todir="${server}webapps\Lab7\WEB-INF\classes">
+            <fileset dir="${work}build"/>
+        </copy>
+
+    </target>
+
+    <target name="war" depends="copy">
+        <war destfile="${server}\webapps\Lab7\Lab7.war" webxml=".\src\main\webapp\WEB-INF\web.xml">
+            <lib dir="${work}src\main\webapp\WEB-INF\lib"/>
+
+            <classes dir="build"/>
+<!--            <fileset dir="${work}src\main\webapp\html" />-->
+            <fileset dir="${work}src\main\webapp\jsp" />
+
+        </war>
+    </target>
+</project>

@@ -1,0 +1,6 @@
+GET http://localhost:8080/six/Task2?urln=1
+Accept: application/json
+
+###
+POST http://localhost:8080/six/Ccc?value1=12&value2=2&value3=3&cbean=new
+

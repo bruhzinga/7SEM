@@ -1,0 +1,52 @@
+<?xml version="1.0" ?>
+<project name="Lab2" default="war">
+
+    <property name="project" value="Lab2"/>
+
+    <target name="init">
+        <echo message="Build ${project} project" />
+        <property name = "server"
+                  value = "D:\ALEX\STUDY\7SEM_4COURSE\JAVA\apache-tomcat-9.0.52\" />
+        <property name = "work"
+                  value = "D:\ALEX\STUDY\7SEM_4COURSE\JAVA\LABS\2\${project}\" />
+    </target>
+
+    <target name="compile" depends ="init">
+        <delete verbose ="true">
+            <fileset dir="${work}build"/>
+        </delete>
+        <javac srcdir = "${work}src" destdir = "${work}\build">
+            <classpath>
+                <fileset dir="${server}lib"/>
+            </classpath>
+        </javac>
+    </target>
+
+    <target name="create" depends ="compile">
+        <delete dir= "${server}webapps\${project}\" />
+        <mkdir dir= "${server}webapps\${project}\" />
+        <mkdir dir= "${server}webapps\${project}\WEB-INF" />
+    </target>
+
+    <target name="copy" depends ="create">
+        <copy todir="${server}webapps\${project}\WEB-INF\" file= "${work}src\main\webapp\WEB-INF\web.xml"/>
+
+        <copy todir="${server}webapps\${project}\">
+            <fileset dir="${work}src\main\webapp\html"/>
+        </copy>
+
+        <copy todir="${server}webapps\${project}\" file="${work}src\main\webapp\index.html"/>
+
+        <copy todir="${server}webapps\${project}\WEB-INF\classes">
+            <fileset dir="${work}build"/>
+        </copy>
+    </target>
+
+    <target name="war" depends="copy">
+        <war destfile="${server}\webapps\${project}\${project}.war" webxml=".\src\main\webapp\WEB-INF\web.xml">
+            <lib dir="${work}src\main\webapp\WEB-INF\lib"/>
+            <classes dir="build"/>
+            <fileset dir="${work}src\main\webapp\html" />
+        </war>
+    </target>
+</project>

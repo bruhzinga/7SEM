@@ -1,0 +1,107 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>03 - Index</title>
+</head>
+<body>
+
+<!-- 1 -->
+<h5>Task 1. GET запрос сервлета Sss по гиперссылке</h5>
+<a href="Sss">Отправить запрос</a>
+
+<h5>Task 1. Переопределение запроса с сервлета Sss на Ggg</h5>
+<form action="Sss" method="get">
+    <input type="hidden" name="click" value="GetForwardSssGgg">
+    <button type="submit">Отправить запрос</button>
+</form>
+
+<h5>Task 2. POST запрос сервлета Sss</h5>
+<form action="Sss" method="post">
+    <input type="hidden" name="click" value="PostSss">
+    <button type="submit">Отправить запрос</button>
+</form>
+
+<h5>Task 2. Переопределение POST запроса с сервлета Sss на Ggg</h5>
+<form action="Sss" method="post">
+    <input type="hidden" name="click" value="PostForwardSssGgg">
+    <button type="submit">Отправить запрос</button>
+</form>
+
+<h5>Task 2. Переопределение запроса с сервлета Sss на Ggg с параметром</h5>
+<form action="Sss" method="POST">
+    <input type="hidden" name="click" value="PostForwardSssGggForm">
+    <input type="text" name="formParam" placeholder="Parameter">
+    <button type="submit">RUN</button>
+</form>
+
+<h5>Task 3. Переопределение GET запроса на html страницу</h5>
+<form action="Sss" method="get">
+    <input type="hidden" name="click" value="GetForwardSssHTML">
+    <button type="submit">Отправить запрос</button>
+</form>
+
+<!-- 2 -->
+
+<h5>Task 4.  Переопределение GET запроса Sss -> Ggg -> html страницу</h5>
+<form action="Sss" method="get">
+    <input type="hidden" name="click" value="GetForwardSssGggHTML">
+    <button type="submit">Отправить запрос</button>
+</form>
+<!-- 3 -->
+<h5>Task 6. Перенаправление GET запроса на html страницу</h5>
+<form action="Sss" method="get">
+    <input type="hidden" name="click" value="GetRedirectSssHTML">
+    <button type="submit">Отправить запрос</button>
+</form>
+
+<!-- 4-5 -->
+
+<h5>Task 6. Перенаправление запроса с сервлета Sss на Ggg</h5>
+<form action="Sss" method="get">
+    <input type="hidden" name="click" value="GetRedirectSssGgg">
+    <button type="submit">Отправить запрос</button>
+</form>
+<!-- 6 -->
+
+
+<h5>Task 6. Перенаправление POST запроса с сервлета Sss на Ggg</h5>
+<form action="Sss" method="post">
+    <input type="hidden" name="click" value="PostRedirectSssGgg">
+    <button type="submit">Отправить запрос</button>
+</form>
+
+
+<h5>Task 6*. Перенаправление запроса с сервлета Sss на Ggg с параметром</h5>
+<form action="Sss" method="POST">
+    <input type="hidden" name="click" value="PostRedirectSssGggForBody">
+    <input type="text" name="formParam" placeholder="Parameter">
+    <button type="submit">RUN</button>
+</form>
+
+<h5>Task 6. Перенаправление GET запроса Sss -> Ggg -> html страницу</h5>
+<form action="Sss" method="post">
+    <input type="hidden" name="click" value="GetRedirectSssGggHTML">
+    <button type="submit">Отправить запрос</button>
+</form>
+<!-- 7 -->
+<h5>Task 7. GET-запрос Sss -> Ggg с помощью классов пакета org.appache.commons.httpclient</h5>
+<form action="Sss" method="get">
+    <input type="hidden" name="click" value="GetSssGggCLIENT">
+    <button type="submit">Отправить запрос</button>
+</form>
+
+<!-- 9 -->
+<h5>Task 9. POST-запрос Sss -> Ggg с помощью классов пакета org.apache.commons.httpclient</h5>
+<form action="Sss" method="POST">
+    <input type="hidden" name="click" value="PostSssGggCLIENT">
+    <button type="submit">Отправить запрос</button>
+</form>
+
+
+
+
+
+
+</body>
+</html>

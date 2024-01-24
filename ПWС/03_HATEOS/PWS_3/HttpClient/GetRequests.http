@@ -1,0 +1,34 @@
+### get students empty query
+GET {{host}}/students?globalLike=1
+Content-Type: application/json
+
+### get students with format
+GET {{host}}/students?format=xml
+Content-Type: application/json
+
+### get students with format and limit
+GET {{host}}/students?limit=2&offset=1&sort=desc
+
+### get students with maxId and minId
+GET {{host}}/students?maxId=3&minId=2
+
+### get students with like
+GET {{host}}/students?like=1
+
+### get students with global like
+GET {{host}}/students?globalLike=1
+
+### get students with global with columns
+GET {{host}}/students?columns=id,name&format=json
+
+### get students with full query
+GET {{host}}/students?format=xml&limit=100&offset=0&maxId=100&minId=1&like=&columns=id,name&sort=desc
+
+### GET student by id 
+
+GET {{host}}/students/2
+
+
+
+
+

@@ -1,0 +1,11 @@
+### GET
+GET http://localhost:54474/HTA
+
+### POST
+POST http://localhost:54474/HTA?RESULT=1
+
+### PUT 
+PUT http://localhost:54474/HTA?ADD=1
+
+### DELETE
+DELETE http://localhost:54474/HTA

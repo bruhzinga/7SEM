@@ -1,0 +1,11 @@
+### GET RESULT
+GET http://localhost:5001/api/result
+
+### POST RESULT
+POST http://localhost:5001/api/result?result=11
+
+### PUT ADD
+PUT http://localhost:5001/api/result?add=1
+
+### DELETE 
+DELETE http://localhost:5001/api/result

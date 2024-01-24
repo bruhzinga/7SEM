@@ -1,0 +1,13 @@
+### Get all errors
+GET http://localhost:49640/api}/errors
+Content-Type: application/json
+
+### Get error with code = 400,subCode = 1
+GET http://localhost:49640/api/errors/400/1
+Content-Type: application/json
+
+### Get error with code = 400,subCode = 2
+GET http://localhost:49640/api/errors/400/2
+Content-Type: application/json
+
+

@@ -1,0 +1,14 @@
+POST http://localhost/04_SOAP_V2/Services/Simplex.asmx
+Content-Type:application/soap+xml
+
+{
+<?xml version="1.0" encoding="utf-8"?> 
+<soap12:Envelope xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soap12="http://www.w3.org/2003/05/soap-envelope"> 
+    <soap12:Body> 
+        <add xmlns="http://zda/"> 
+            <x>1</x> 
+            <y>1</y> 
+        </add> 
+    </soap12:Body> 
+</soap12:Envelope>
+}

@@ -1,0 +1,21 @@
+### delete student
+DELETE {{host}}/students/9
+
+
+### add student
+POST {{host}}/students
+Content-Type: application/json
+
+{
+  "Name": "fsdgdklfjdsflkds name",
+  "Phone": "student phone"
+}
+
+### update student
+PUT {{host}}/students/18
+Content-Type: application/json
+
+{
+  "Name": "studenй32132213йt qweq",
+  "Phone": "student phone112313213"
+}

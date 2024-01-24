@@ -1,0 +1,11 @@
+####
+GET http://localhost:49240/WcfDataService1.svc/Note
+
+###
+GET http://localhost:49240/WcfDataService1.svc/Student?$filter=name eq 'John'
+
+###
+GET http://localhost:49240/WcfDataService1.svc/Student?$select=name
+
+###
+GET http://localhost:49240/WcfDataService1.svc/Student?$orderby=id desc

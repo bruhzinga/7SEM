@@ -1,0 +1,57 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title>Lab1</title>
+    <meta charset="utf-8"/>
+</head>
+<body>
+<div>
+    <form>
+        <input type="button" onclick="getResult()" value="Get result"/><br/>
+        <input type="button" onclick="deleteResult()" value="Delete from stack"/><br/>
+        <input type="number" id="number"/>
+        <input type="button" onclick="postResult()" value="Update result"/>
+        <input type="button" onclick="putResult()" value="Add to stack"/>
+    </form>
+
+    <p id="result"></p>
+</div>
+
+<script>
+    const url = 'http://localhost:54474/HTA';
+
+    async function getResult() {
+
+        const response = await fetch(url, {method: 'GET',  credentials:"include"});
+        
+        document.getElementById('result').innerText = await response.text();
+    }
+
+    async function postResult() {
+        let result = document.getElementById('number').value;
+
+        const response = await fetch(`${url}?RESULT=${result}`, {method: 'POST',  credentials:"include"});
+
+        document.getElementById('result').innerText = await response.text();
+
+    }
+
+    async function putResult() {
+        let result = document.getElementById('number').value;
+
+        const response = await fetch(`${url}?ADD=${result}`, {method: 'PUT',credentials:"include"});
+        
+        document.getElementById('result').innerText = await response.text();
+    }
+
+    async function deleteResult() {
+
+        const response = await fetch(url, {method: 'DELETE', credentials:"include"});
+
+
+        document.getElementById('result').innerText = await response.text();
+    }
+</script>
+</body>
+</html>
